@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block title %}
+    Hola mundo
+{% endblock %}
+
+{% block content %}
+{% if  nombre and nombre == 'Bryan Arévalo' %}
+    <h2 class="title">Hola {{ nombre }}.</h2>
+{% else %}
+    <h2 class="title">El nombre no existe o no coincide.</h2>
+{% endif %}
+
+
+
+{{ block.super }}
+{% endblock %}

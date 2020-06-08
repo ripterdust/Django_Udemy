@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} | Sitio web con Django</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <!-- Cabecera de la página -->
+    <header>
+        <div id="logotipo">
+            <!-- Logo Django -->
+            <img src="{% static 'img/logo.png/' %}" alt=""/>
+            <h1>Sitio web con Django</h1>
+        </div>
+        
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li>
+                <a href="{% url 'hola' %}">Hola mundo</a>
+            </li>
+            <li>
+                <a href="{% url 'prueba' %}">Prueba</a>
+            </li>
+            <li>
+                <a href="{% url 'articulos' %}">Artículos</a>
+            </li>
+        
+        </ul>
+    </nav>
+    <!-- Content -->
+    <div id="content">
+        <div class="box">
+            {% block content%}
+            <!-- Código que viene de las templates -->
+                <strong>Contenido del bloque original</strong>
+            {% endblock %}
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        Master en python &copy; - {% now 'd/m/Y' %}
+    </footer>
+</body>
+
+</html>

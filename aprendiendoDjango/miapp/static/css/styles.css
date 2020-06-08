@@ -1,0 +1,108 @@
+/* Estilos generales */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+body{
+    background: #f2f2f2;
+}
+
+header{
+    /* width: 1212px; */
+    height: 140px;
+    background-color: #23282b;
+    margin: auto;
+}
+#logotipo{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+}
+#logotipo img{
+    display: block;
+    width: 80px;
+    margin: 20px;
+    float: left;
+}
+
+
+#logotipo h1{
+    display: block;
+    letter-spacing: 2px;
+    color: #2ba977;
+    font-weight: 100;
+}
+
+/* Estilos barra navegación */
+nav{
+    
+    background: #1b1e1f;
+    border: 1px soli #333333;
+    margin: auto;
+}
+
+nav ul {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav ul li{
+    line-height: 40px;
+}
+
+nav ul li a{
+    display: block;
+    color: #d1d4d6;
+    transition: .1s;
+    padding: 0 10px;
+}
+
+nav ul li a:hover{
+    background: #2ba977;
+    color: white;
+    border-radius: 3px;
+}
+
+/* Estilos contenido central */
+
+#content {
+    width: 1212px;
+    min-height: 930px;
+    margin: 40px auto;
+    display: block;
+}
+
+.box {
+    background: white;
+    width: 90%;
+    min-height: 930px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: auto;
+}
+
+.title{
+    color: #444;
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
+/* Footer */
+
+footer{
+    background: #1b1e1f;
+    border: 1px solid #333;
+    color: #d1d4d6;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+}

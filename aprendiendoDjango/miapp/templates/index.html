@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+
+{% comment 'Inicio'%} 
+    Esto es un comentario con Django
+{% endcomment %}
+
+{% block content %}
+
+<h1 class="title">{{ title }} </h1>
+{{ miVariable }}
+<br/>
+{% include 'fechaActual.html' %}
+<div class="title">Lenguajes: </div>
+
+<ul>
+    {% for lenguaje in lenguajes %}
+        <li>
+            {{ lenguaje }}
+        </li>
+    {% empty %}
+        <h1>No hay nada que mostrar</h1>
+    {% endfor %}
+
+</ul>
+
+
+{% endblock %}
