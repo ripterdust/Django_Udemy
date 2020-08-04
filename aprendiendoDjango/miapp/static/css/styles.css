@@ -90,6 +90,46 @@ nav ul li a:hover{
     margin: auto;
 }
 
+.box form {
+    width: 40%;
+    margin: 3em 0;
+}
+.box form input,
+.box form label{
+    display: block;
+    padding: 5px;
+    
+}
+
+.box form input[type="text"], 
+.box form textarea{
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.box form select{
+    width: 100px;
+    padding: 5px;
+}
+.box form select:hover{
+    cursor: pointer;
+}
+
+.box form input[type="submit"]{
+    padding: 10px;
+    margin: 10px auto;
+    background: #2ba977;
+    color: white;
+    border: none;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.box form input[type="submit"]:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
 .title{
     color: #444;
     letter-spacing: 1px;
@@ -106,3 +146,4 @@ footer{
     padding: 10px;
     margin: 0 auto;
 }
+

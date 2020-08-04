@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from miapp.models import Article, Category
-
+from miapp.forms import FormArticle
 
 # Create your views here.
 
@@ -64,7 +64,7 @@ def editarArticulo(request, id):
 def articulos(request):
     # Esto los ordena por id y solo obtiene 5
     # articulos = Article.objects.order_by('id')[:5]
-    articulos = Article.objects.all()
+    articulos = Article.objects.all().order_by('-id')
 
     return render(request, 'articulos.html', { 
         'articulos': articulos,
@@ -77,3 +77,44 @@ def borrarArticulo(request, id):
     articulo.delete()
 
     return redirect('articulos')
+
+
+# Formularios
+# Esto guardará un artículo
+
+def save_article(request):
+    
+    if request.method == 'POST':
+        articulo = Article()
+        articulo.title = request.POST['title']
+        articulo.content = request.POST['content']
+        articulo.public = request.POST['public']
+        articulo.save()
+        return redirect('articulos')
+
+    else: 
+        return HttpResponse('No se ha podido guardar el artículo')
+
+
+def create_article(request):
+    # Esta pista visualiza la plantilla
+    return render(request, 'create_article.html')
+
+
+# Crear el artículo con clases
+
+def create_artcile_class(request):
+
+    if request.method == 'POST':
+        formulario = FormArticle(request.POST)
+
+        if formulario.is_valid():
+            data_form = formulario.cleaned_data()
+            
+            
+
+            return HttpResponse('¡Guardado!')
+
+    else:
+        formulario = FormArticle()
+        return render(request, 'formulario_clase.html', {'form': formulario})
